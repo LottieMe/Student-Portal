@@ -1,5 +1,4 @@
 //package cc103_projsystem;
-
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,11 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
 public class GROUP2PROJ extends javax.swing.JFrame {
 
     public GROUP2PROJ() {
-        
         initComponents();
         this.setBackground(255, 255, 255);
     }
@@ -138,30 +135,30 @@ public class GROUP2PROJ extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(371, 371, 371)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(forgotpass, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(forgotpass)
                             .addComponent(enterEmail)
-                            .addComponent(emailLABEL, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(passLABEL, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(emailLABEL)
+                            .addComponent(passLABEL)
                             .addComponent(enterPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(0, 343, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup( layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(QCUportal)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
                                 .addGap(117, 117, 117)
                                 .addComponent(stdIMAGE, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(127, 127, 127)))
                         .addGap(334, 334, 334))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(signIn)
                         .addGap(491, 491, 491))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup( layout.createSequentialGroup()
                         .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(469, 469, 469))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(NEW)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(register)
@@ -217,8 +214,9 @@ public class GROUP2PROJ extends javax.swing.JFrame {
     }                                     
     private void enterEmailActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
-    }                                          
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {                                      
+    }
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         String email = enterEmail.getText().trim();
         String password = new String(enterPassword.getPassword());
@@ -232,22 +230,22 @@ public class GROUP2PROJ extends javax.swing.JFrame {
             Connection conn = null;
             PreparedStatement pstmt = null;
             ResultSet rs = null;
-            
             try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+
                 conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASSWORD);
 
                 String sql = "SELECT * FROM users WHERE Email=? AND Password=?";
                 pstmt = conn.prepareStatement(sql);
                 pstmt.setString(1, email);
                 pstmt.setString(2, password);
-                
+
                 rs = pstmt.executeQuery();
-                
+
                 if (rs.next()) {
                     // Login successful
                     JOptionPane.showMessageDialog(this, "Login successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                    
-                    // Open dashboard or next frame here
+
                     DASHBOARD dashboard = new DASHBOARD();
                     dashboard.setVisible(true);
                     this.dispose(); // Close the login window
@@ -255,21 +253,23 @@ public class GROUP2PROJ extends javax.swing.JFrame {
                     // Invalid credentials
                     JOptionPane.showMessageDialog(this, "Invalid email or password!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-            }catch (SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Database error occurred!", "Error", JOptionPane.ERROR_MESSAGE);
-            }   finally {
-                    try {
-                        // Close resources
-                        if (rs != null) rs.close();
-                        if (pstmt != null) pstmt.close();
-                        if (conn != null) conn.close();
+            } catch (ClassNotFoundException | SQLException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Database error occurred!", "Error", JOptionPane.ERROR_MESSAGE);
+            } finally {
+                try {
+                    // Close resources
+                    if (rs != null) rs.close();
+                    if (pstmt != null) pstmt.close();
+                    if (conn != null) conn.close();
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
-            }        
+            }
         }
-    }                                     
+    }
+
+
 
     private boolean isValidLogin(String email, String password) {
         return false;

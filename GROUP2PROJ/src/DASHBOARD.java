@@ -15,7 +15,6 @@ public class DASHBOARD extends JFrame {
     @SuppressWarnings("unchecked")
                         
     private void initComponents() {
-
         jPanel1 = new javax.swing.JPanel();
         qcu_logo = new javax.swing.JLabel();
         blueline = new javax.swing.JLabel();
@@ -110,7 +109,7 @@ public class DASHBOARD extends JFrame {
         menu1.setLayout(menu1Layout);
         menu1Layout.setHorizontalGroup(
             menu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu1Layout.createSequentialGroup()
+            .addGroup(menu1Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(iconDB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -119,7 +118,7 @@ public class DASHBOARD extends JFrame {
         );
         menu1Layout.setVerticalGroup(
             menu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, menu1Layout.createSequentialGroup()
+            .addGroup(menu1Layout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addGroup(menu1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(menu1Layout.createSequentialGroup()
@@ -150,7 +149,7 @@ public class DASHBOARD extends JFrame {
         menu2.setLayout(menu2Layout);
         menu2Layout.setHorizontalGroup(
             menu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu2Layout.createSequentialGroup()
+            .addGroup(menu2Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(iconSP)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -185,7 +184,7 @@ public class DASHBOARD extends JFrame {
         menu3.setLayout(menu3Layout);
         menu3Layout.setHorizontalGroup(
             menu3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu3Layout.createSequentialGroup()
+            .addGroup(menu3Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(iconSE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -221,7 +220,7 @@ public class DASHBOARD extends JFrame {
         menu4.setLayout(menu4Layout);
         menu4Layout.setHorizontalGroup(
             menu4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu4Layout.createSequentialGroup()
+            .addGroup(menu4Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(iconGRADES)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -256,7 +255,7 @@ public class DASHBOARD extends JFrame {
         menu5.setLayout(menu5Layout);
         menu5Layout.setHorizontalGroup(
             menu5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu5Layout.createSequentialGroup()
+            .addGroup(menu5Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(iconCS)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -291,7 +290,7 @@ public class DASHBOARD extends JFrame {
         menu6.setLayout(menu6Layout);
         menu6Layout.setHorizontalGroup(
             menu6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu6Layout.createSequentialGroup()
+            .addGroup(menu6Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(iconSA)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -326,7 +325,7 @@ public class DASHBOARD extends JFrame {
         menu7.setLayout(menu7Layout);
         menu7Layout.setHorizontalGroup(
             menu7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu7Layout.createSequentialGroup()
+            .addGroup(menu7Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(iconLOGOUT)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -451,7 +450,7 @@ public class DASHBOARD extends JFrame {
                     .addComponent(boxBTN1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSubEnrolledNUM))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, box1Layout.createSequentialGroup()
+            .addGroup(box1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(txtSubEnrolled)
                 .addContainerGap())
@@ -469,7 +468,8 @@ public class DASHBOARD extends JFrame {
         );
 
         box2.setBackground(new java.awt.Color(88, 88, 208));
-        box2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, null));
+      //  box2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.white));
+
         box2.setPreferredSize(new java.awt.Dimension(198, 170));
 
         txtGWANUM.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
@@ -508,7 +508,7 @@ public class DASHBOARD extends JFrame {
         );
 
         box3.setBackground(new java.awt.Color(88, 88, 208));
-        box3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, null));
+    //    box3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, null));
         box3.setPreferredSize(new java.awt.Dimension(198, 170));
 
         txtClassSchedNUM.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
@@ -612,7 +612,7 @@ public class DASHBOARD extends JFrame {
         DASHBOARDbox.setBackground(new java.awt.Color(136, 136, 203));
 
         jLabel31.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        jLabel31.setText("Welcome back, Maria!");
+        jLabel31.setText("Welcome back!");
         jLabel31.setToolTipText("");
         jLabel31.setAlignmentY(0.0F);
         jLabel31.setIconTextGap(0);
@@ -701,7 +701,7 @@ public class DASHBOARD extends JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
